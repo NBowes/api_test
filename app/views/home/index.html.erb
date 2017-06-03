@@ -11,8 +11,11 @@
 
 
 
-<h2>Orders</h2>
-<table>
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Orders
+</h4>
+<table class='ui definition table'>
   <tr>
     <th>Order number</th>
     <th>Financial Status</th>
@@ -20,11 +23,12 @@
   </tr>
   <% @orders.each do |order | %>
   <tr>
-    <td><%= order.number %></td>
+    <td><%= order.order_number %></td>
     <td><%= order.financial_status %></td>
     <td>
       <% if order.fulfillment_status = "null"%>
         Unfulfilled
+        
         <% else %>
       <%= order.fulfillment_status%>
       <% end %>
