@@ -26,7 +26,7 @@
     <td><%= order.order_number %></td>
     <td><%= order.financial_status.capitalize %></td>
     <td>
-      <% if order.fulfillment_status = "null"%>
+      <% if order.fulfillment_status == nil%>
         Unfulfilled
         <% else %>
       <%= order.fulfillment_status.capitalize%>
