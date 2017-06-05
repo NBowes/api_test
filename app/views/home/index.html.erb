@@ -10,7 +10,7 @@
 <% end %>
 
 
-
+<div class="ui main text container">
 <h4 class="ui horizontal divider header">
   <i class="tag icon"></i>
   Orders
@@ -24,15 +24,16 @@
   <% @orders.each do |order | %>
   <tr>
     <td><%= order.order_number %></td>
-    <td><%= order.financial_status %></td>
+    <td><%= order.financial_status.capitalize %></td>
     <td>
       <% if order.fulfillment_status = "null"%>
         Unfulfilled
-        
         <% else %>
-      <%= order.fulfillment_status%>
+      <%= order.fulfillment_status.capitalize%>
       <% end %>
     </td>
   </tr>
   <% end %>
 </table>
+</div>
+<%= javascript_include_tag 'home' %>
